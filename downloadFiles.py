@@ -7,7 +7,7 @@ f.close()
 f = open("articleText.txt", "w")
 for line in lines:
 	try:
-		article = Article(line.split(' ')[1].strip())
+		article = Article(line.split(' ')[-1].strip())
 		article.download()
 		article.parse()
 		f.write(article.text.replace("\n", " ") + "\n")
